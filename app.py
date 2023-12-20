@@ -125,9 +125,33 @@ dist_metro = {
 
 st.sidebar.subheader("Введите параметры вашей квартиры", divider="orange")
 
-building_type = st.sidebar.selectbox("Тип дома", dict_unique["building_type"])
-object_type = st.sidebar.selectbox("Новизна квартиры", dict_unique["object_type"])
-apartment_type = st.sidebar.selectbox("Тип квартиры", dict_unique["apartment_type"])
+building_type_mapping = {
+    "Монолитный": "Monolithic",
+    "Панельный": "Panel",
+    "Кирпичный": "Brick",
+    "Блочный": "Blocky",
+    "Другой": "Other",
+    "Деревянный": "Wooden"
+}
+
+object_type_mapping = {
+    "Новая": "New Building",
+    "Вторичная": "Secondary Real Estate"
+}
+
+apartment_type_mapping = {
+    "Квартира": "Flat",
+    "Студия": "Studio"
+}
+
+
+building_type = st.sidebar.selectbox("Тип дома", ["Монолитный", "Панельный", "Кирпичный", "Блочный", "Другой", "Деревянный"])
+object_type = st.sidebar.selectbox("Новизна квартиры", ["Новая", "Вторичная"])
+apartment_type = st.sidebar.selectbox("Тип квартиры", ["Квартира", "Студия"])
+
+building_type = building_type_mapping[building_type]
+object_type = object_type_mapping[object_type]
+apartment_type = apartment_type_mapping[apartment_type]
 
 sorted_metro = sorted(dict_metro["Станция"])
 nearest_metro_station = st.sidebar.selectbox(
