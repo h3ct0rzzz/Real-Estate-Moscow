@@ -67,7 +67,7 @@ df = transform(df)
 df_view = load_data_view(PATH_DATA_VIEW )
 df_view = df_view.drop(
     [
-        "Unnamed: 0",
+        "Unnamed: 0.1",
         "date",
         "time",
         "geo_lat",
