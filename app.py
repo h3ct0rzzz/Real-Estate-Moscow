@@ -12,10 +12,6 @@ st.set_page_config(
     page_icon="🏙️",
     layout="wide",
     initial_sidebar_state="expanded",
-    custom_theme = {
-        "base": "light",
-        "primaryColor": "#f7ac3f"
-    }    
 )
 
 
