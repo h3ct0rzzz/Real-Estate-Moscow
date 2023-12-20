@@ -6,18 +6,18 @@ from catboost import CatBoostRegressor
 import time
 import random
 
-custom_theme = {
-    "base": "light",
-    "primaryColor": "#f9b44f"
-}
 
 st.set_page_config(
     page_title="Moscow Real Estate App",
     page_icon="🏙️",
     layout="wide",
     initial_sidebar_state="expanded",
-    **custom_theme
+    custom_theme = {
+        "base": "light",
+        "primaryColor": "#f7ac3f"
+    }    
 )
+
 
 st.header("Оценка стоимости вашей квартиры", divider="orange")
 
