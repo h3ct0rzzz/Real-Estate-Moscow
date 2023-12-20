@@ -159,7 +159,7 @@ nearest_metro_station = st.sidebar.selectbox(
 )
 
 sorted_rooms = sorted(dict_unique["rooms"])
-rooms = st.sidebar.select_slider("Количество комнат", options=sorted_rooms)
+rooms = st.sidebar.select_slider("Количество комнат", min_value=1, options=sorted_rooms)
 
 area = st.sidebar.slider(
     "Площадь квартиры (кв. м)",
