@@ -14,7 +14,6 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-
 st.header("Оценка стоимости вашей квартиры", divider="orange")
 
 st.caption(
@@ -68,7 +67,6 @@ df = transform(df)
 df_view = load_data_view(PATH_DATA_VIEW )
 df_view = df_view.drop(
     [
-        "Unnamed: 0.1",
         "Unnamed: 0",
         "date",
         "time",
@@ -153,17 +151,14 @@ building_type = building_type_mapping[building_type]
 object_type = object_type_mapping[object_type]
 apartment_type = apartment_type_mapping[apartment_type]
 
+
 sorted_metro = sorted(dict_metro["Станция"])
 nearest_metro_station = st.sidebar.selectbox(
     "Ближайшая станция метро", sorted_metro, key="Станция"
 )
 
 sorted_rooms = sorted(dict_unique["rooms"])
-rooms = st.sidebar.slider("Количество комнат",  
-    min_value=min(sorted_rooms) + 1,
-    max_value=max(sorted_rooms),
-    step=1,
-)                       
+rooms = st.sidebar.select_slider("Количество комнат", options=sorted_rooms)
 
 area = st.sidebar.slider(
     "Площадь квартиры (кв. м)",
@@ -213,7 +208,7 @@ metro_dist = st.sidebar.slider(
 )
 
 walk_time_to_metro = st.sidebar.slider(
-    "Сколько времени занимает путь пешком до метро? (мин)",
+    "Сколько времени занимает путь пешком до метро?",
     min_value=min(dict_unique["walk_time_to_metro"]),
     max_value=max(dict_unique["walk_time_to_metro"]),
     step=0.1,
@@ -293,6 +288,9 @@ if building_type == "Wooden" and levels > 6:
     st.sidebar.warning(
         f"Нам кажется, что деревянного {levels}-этажного дома не существует. Вы уверены в своем запросе?"
     )
+
+if building_type = "Кирпичный":
+    
 
 dict_data = {
     "building_type": building_type,
