@@ -289,8 +289,6 @@ if building_type == "Wooden" and levels > 6:
         f"Нам кажется, что деревянного {levels}-этажного дома не существует. Вы уверены в своем запросе?"
     )
 
-if building_type = "Кирпичный":
-    
 
 dict_data = {
     "building_type": building_type,
