@@ -226,6 +226,7 @@ if rooms == 0:
 else:
     area_to_rooms = abs(area / rooms)
 
+
 st.sidebar.subheader("Дополнительные параметры", divider="orange")
 st.sidebar.caption("Пропустите вопросы, если затрудняетесь ответить")
 
