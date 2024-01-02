@@ -211,8 +211,8 @@ metro_dist = st.sidebar.slider(
 
 walk_time_to_metro = st.sidebar.slider(
     "Сколько времени занимает путь пешком до метро?",
-    min_value=round(min(dict_unique["walk_time_to_metro"], 2),
-    max_value=round(max(dict_unique["walk_time_to_metro"], 2),
+    min_value=min(dict_unique["walk_time_to_metro"],
+    max_value=max(dict_unique["walk_time_to_metro"],
     step=1.0,
 )
 
