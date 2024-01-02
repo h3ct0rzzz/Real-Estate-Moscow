@@ -189,9 +189,9 @@ levels = st.sidebar.slider(
 
 kremlin_dist = st.sidebar.slider(
     "Расстояние от центра (км)",
-    min_value=min(dict_unique["kremlin_dist"]),
-    max_value=max(dict_unique["kremlin_dist"]),
-    step=0.1,
+    min_value=int(min(dict_unique["kremlin_dist"])),
+    max_value=int(max(dict_unique["kremlin_dist"])),
+    step=1,
 )
 
 if nearest_metro_station in dist_metro:
