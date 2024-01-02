@@ -164,14 +164,14 @@ area = st.sidebar.slider(
     "Площадь квартиры (кв. м)",
     min_value=min(dict_unique["area"]),
     max_value=max(dict_unique["area"]),
-    step=1,
+    step=1.0,
 )
 
 kitchen_area = st.sidebar.slider(
     "Площадь кухни (кв. м)",
     min_value=min(dict_unique["kitchen_area"]),
     max_value=max(dict_unique["kitchen_area"]),
-    step=1,
+    step=1.0,
 )
 
 level = st.sidebar.slider(
